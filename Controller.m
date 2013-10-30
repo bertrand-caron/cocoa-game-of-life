@@ -12,6 +12,8 @@ NSString * const CGLUpdateSpeedKey = @"UpdateSpeed";
 @synthesize columns;
 @synthesize rows;
 @synthesize cells;
+@synthesize pencilSize;
+@synthesize pencilDensity;
 
 + (void)initialize
 {

@@ -86,10 +86,22 @@
     NSPoint downPoint = [self convertPoint:p fromView:nil];
     int column = downPoint.x / (cellWidth + [self borderSize]);
     int row = downPoint.y / (cellHeight + [self borderSize]);
-    [controller toggleCellAtColumn:column andRow:row];
+    
+    int delta= (int)[[controller pencilSize] doubleValue]/2;
+    
+    for (int i = column-delta;i<=column+delta;i++)
+    {
+        for (int j = row-delta;j<=row+delta;j++)
+        {
+            if ((random() % 100)<=(int)[[controller pencilDensity] doubleValue])
+            {   [controller toggleCellAtColumn:i andRow:j];
 
-    // For drags we want to enable or disable, not toggle
-    dragCellStatus = [controller cellAliveAtColumn:column andRow:row];
+                // For drags we want to enable or disable, not toggle
+                dragCellStatus = [controller cellAliveAtColumn:i andRow:j];
+                NSLog(@"Log");
+            }
+        }
+    }
 
     [self setNeedsDisplay:TRUE];
 }

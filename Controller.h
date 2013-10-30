@@ -12,7 +12,6 @@ extern NSString * const CGLUpdateSpeedKey;
     IBOutlet CellView *view;
     IBOutlet NSSlider *speed;
     IBOutlet NSSlider *gridSize;
-    IBOutlet NSSlider *pencilSize;
     IBOutlet NSButton *play;
 
     PreferenceController *preferenceController;
@@ -34,6 +33,8 @@ extern NSString * const CGLUpdateSpeedKey;
 @property(readwrite, assign) NSUInteger columns;
 @property(readwrite, assign) NSUInteger rows;
 @property(readwrite, assign) NSMutableArray *cells;
+@property IBOutlet NSSlider *pencilSize;
+@property IBOutlet NSSlider *pencilDensity;
 
 - (Cell *)cellAtColumn:(NSUInteger)colKey andRow:(NSUInteger)rowKey;
 - (void)setCell:(Cell *)aCell atColumn:(NSUInteger)colKey andRow:(NSUInteger)rowKey;
