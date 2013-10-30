@@ -11,7 +11,8 @@ extern NSString * const CGLUpdateSpeedKey;
 {
     IBOutlet CellView *view;
     IBOutlet NSSlider *speed;
-    IBOutlet NSSlider *size;
+    IBOutlet NSSlider *gridSize;
+    IBOutlet NSSlider *pencilSize;
     IBOutlet NSButton *play;
 
     PreferenceController *preferenceController;

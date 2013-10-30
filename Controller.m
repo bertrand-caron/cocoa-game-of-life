@@ -43,7 +43,7 @@ NSString * const CGLUpdateSpeedKey = @"UpdateSpeed";
 - (void) awakeFromNib
 {
     [speed setDoubleValue:updateSpeed];
-    [size setIntegerValue:rows];
+    [gridSize setIntegerValue:rows];
 
     // Pull the saved preferences (or the defaults)
     NSData * data = nil;
@@ -305,7 +305,7 @@ NSString * const CGLUpdateSpeedKey = @"UpdateSpeed";
 
 - (IBAction)resize:(id)sender
 {
-    int newSize = [size intValue];
+    int newSize = [gridSize intValue];
     NSMutableArray *newCells = [[NSMutableArray alloc] initWithCapacity:newSize];
     for(int colIndex = 0; colIndex < newSize; colIndex++) {
         NSMutableArray *row = [[NSMutableArray alloc] initWithCapacity:newSize];
@@ -393,7 +393,7 @@ NSString * const CGLUpdateSpeedKey = @"UpdateSpeed";
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
-    [[NSUserDefaults standardUserDefaults] setInteger:[size integerValue] forKey:CGLGridSizeKey];
+    [[NSUserDefaults standardUserDefaults] setInteger:[gridSize integerValue] forKey:CGLGridSizeKey];
     [[NSUserDefaults standardUserDefaults] setDouble: [speed doubleValue] forKey:CGLUpdateSpeedKey];
 }
 

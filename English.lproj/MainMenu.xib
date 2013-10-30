@@ -338,7 +338,7 @@
                         </connections>
                     </customView>
                     <button verticalHuggingPriority="750" id="454">
-                        <rect key="frame" x="110" y="15" width="96" height="32"/>
+                        <rect key="frame" x="110" y="40" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="455">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -349,7 +349,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="460">
-                        <rect key="frame" x="206" y="15" width="96" height="32"/>
+                        <rect key="frame" x="110" y="15" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="461">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -373,7 +373,7 @@
                     <slider horizontalHuggingPriority="750" id="462">
                         <rect key="frame" x="339" y="19" width="15" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <sliderCell key="cell" controlSize="small" alignment="left" minValue="0.20000000000000001" maxValue="60" doubleValue="5" tickMarkPosition="right" sliderType="linear" id="463">
+                        <sliderCell key="cell" controlSize="small" alignment="left" minValue="0.20000000000000001" maxValue="60" doubleValue="40" tickMarkPosition="right" sliderType="linear" id="463">
                             <font key="font" metaFont="smallSystem"/>
                         </sliderCell>
                         <connections>
@@ -383,7 +383,7 @@
                     <slider verticalHuggingPriority="750" id="464">
                         <rect key="frame" x="371" y="23" width="96" height="26"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <sliderCell key="cell" state="on" alignment="left" minValue="10" maxValue="100" doubleValue="40" tickMarkPosition="above" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="465">
+                        <sliderCell key="cell" state="on" alignment="left" minValue="10" maxValue="200" doubleValue="40" tickMarkPosition="above" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="465">
                             <font key="font" size="12" name="Helvetica"/>
                         </sliderCell>
                         <connections>
@@ -411,7 +411,7 @@
                     <textField verticalHuggingPriority="750" id="485">
                         <rect key="frame" x="446" y="51" width="22" height="11"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="100" id="486">
+                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="200" id="486">
                             <font key="font" metaFont="miniSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -428,7 +428,7 @@
                     </textField>
                     <button verticalHuggingPriority="750" id="arM-cs-Re3">
                         <rect key="frame" x="14" y="40" width="96" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Random" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dCU-fV-amF">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -441,12 +441,60 @@
                             </binding>
                         </connections>
                     </button>
+                    <textField verticalHuggingPriority="750" id="zEq-V6-hTd">
+                        <rect key="frame" x="397" y="15" width="47" height="11"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Grid Size" id="Gf1-iM-gr7">
+                            <font key="font" metaFont="miniSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <slider verticalHuggingPriority="750" id="vlh-ji-pIz">
+                        <rect key="frame" x="226" y="23" width="96" height="26"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="3" tickMarkPosition="above" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="GLc-xA-9qN">
+                            <font key="font" size="12" name="Helvetica"/>
+                        </sliderCell>
+                        <connections>
+                            <action selector="resize:" target="451" id="zys-JE-dhX"/>
+                        </connections>
+                    </slider>
+                    <textField verticalHuggingPriority="750" id="VFw-EV-0Tq">
+                        <rect key="frame" x="225" y="51" width="10" height="11"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1" id="cq0-Dt-UdA">
+                            <font key="font" metaFont="miniSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="Vxg-9U-1NC">
+                        <rect key="frame" x="307" y="51" width="16" height="11"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="10" id="49e-Lr-IkZ">
+                            <font key="font" metaFont="miniSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="e46-fa-d0p">
+                        <rect key="frame" x="252" y="15" width="50" height="11"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pencil Size" id="Zfe-2y-QUe">
+                            <font key="font" metaFont="miniSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
         </window>
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="451" customClass="Controller">
             <connections>
+                <outlet property="gridSize" destination="464" id="c54-ZY-vBs"/>
+                <outlet property="pencilSize" destination="vlh-ji-pIz" id="zVe-NW-1a9"/>
                 <outlet property="play" destination="460" id="474"/>
                 <outlet property="size" destination="464" id="471"/>
                 <outlet property="speed" destination="462" id="470"/>
