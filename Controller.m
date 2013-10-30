@@ -76,21 +76,7 @@ NSString * const CGLUpdateSpeedKey = @"UpdateSpeed";
     
     srandom( time(NULL) );
 
-    for ( int colIndex = 0; colIndex < columns; colIndex++ )
-    {
-        NSMutableArray *row = [NSMutableArray arrayWithCapacity:rows];
-
-        for ( int rowIndex = 0; rowIndex < rows; rowIndex++ )
-        {
-            // randomized starting state
-            Cell * cell = [[Cell alloc] init];
-            cell.alive = (BOOL) (random() % 2);
-            [row insertObject:cell atIndex:rowIndex];
-            [cell release];
-        }
-        
-        [cells insertObject:row atIndex:colIndex];
-    }
+    [self initRandomly];
 
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(handleColorChange:)
@@ -113,6 +99,28 @@ NSString * const CGLUpdateSpeedKey = @"UpdateSpeed";
     [updateTimer release];
     [super dealloc];
 }
+
+-(void)initRandomly
+{
+    for ( int colIndex = 0; colIndex < columns; colIndex++ )
+    {
+        NSMutableArray *row = [NSMutableArray arrayWithCapacity:rows];
+        
+        for ( int rowIndex = 0; rowIndex < rows; rowIndex++ )
+        {
+            // randomized starting state
+            Cell * cell = [[Cell alloc] init];
+            cell.alive = (BOOL) (random() % 2);
+            [row insertObject:cell atIndex:rowIndex];
+            [cell release];
+        }
+        
+        [cells insertObject:row atIndex:colIndex];
+    }
+    
+    [view setNeedsDisplay:YES];
+}
+
 
 #pragma mark -
 
